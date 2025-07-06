@@ -44,11 +44,17 @@ Las pruebas están en el directorio tests/.
 
 ### 🔐 Prueba de login
 
+```
 python tests/test_login.py
+
+```
 
 ### 📦 Prueba de registro de producto
 
+```
 python tests/test_registro_producto.py
+
+```
 
 
 
