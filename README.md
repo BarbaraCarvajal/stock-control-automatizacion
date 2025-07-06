@@ -27,10 +27,28 @@ pip --version
 ```
 
 
-
-
-###📦 Dependencias Python
+### 📦 Dependencias Python
 
 Instala las dependencias del proyecto con: 
 pip install selenium fpdf2
+
+
+### 🌐 Google Chrome
+
+Debes tener Google Chrome instalado (en Windows, macOS o Linux).
+
+
+### 🚀 Cómo ejecutar las pruebas
+
+Las pruebas están en el directorio tests/.
+
+### 🔐 Prueba de login
+
+python tests/test_login.py
+
+### 📦 Prueba de registro de producto
+
+python tests/test_registro_producto.py
+
+
 
