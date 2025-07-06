@@ -24,3 +24,13 @@ Verifica con:
 ```bash
 python --version
 pip --version
+```
+
+
+
+
+###📦 Dependencias Python
+
+Instala las dependencias del proyecto con: 
+pip install selenium fpdf2
+
