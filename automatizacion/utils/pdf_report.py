@@ -1,6 +1,6 @@
 from fpdf import FPDF
 
-def generar_pdf_completo(step_name, status, color_status, now, steps, filename):
+def generar_pdf_completo(step_name, description, status, color_status, now, steps, filename):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
 
@@ -13,19 +13,15 @@ def generar_pdf_completo(step_name, status, color_status, now, steps, filename):
     pdf.ln(20)
 
     pdf.set_font("Helvetica", size=16)
-    pdf.cell(0, 10, "Proyecto:", ln=True)
+    pdf.cell(0, 10, "Test:", ln=True)
     pdf.set_font("Helvetica", size=12)
-    pdf.cell(0, 10, "Automatización del Registro de Producto", ln=True)
+    pdf.cell(0, 10, step_name, ln=True)
     pdf.ln(10)
 
     pdf.set_font("Helvetica", size=16)
     pdf.cell(0, 10, "Descripción:", ln=True)
     pdf.set_font("Helvetica", size=12)
-    pdf.multi_cell(0, 8,
-        "Este documento contiene la evidencia visual paso a paso del flujo automatizado "
-        "para registrar un producto en el sistema local, con capturas de pantalla y detalles "
-        "de cada acción realizada."
-    )
+    pdf.multi_cell(0, 8, description)
 
     pdf.ln(10)
     pdf.set_font("Helvetica", size=14)
@@ -40,7 +36,6 @@ def generar_pdf_completo(step_name, status, color_status, now, steps, filename):
         pdf.set_draw_color(*color_status)
         pdf.rect(10, 10, 190, 277)
 
-        # Si el test falló, en la primera página de pasos muestra aviso
         if idx == 1 and status == "FAILED":
             pdf.set_font("Helvetica", size=18)
             pdf.set_text_color(255, 0, 0)
